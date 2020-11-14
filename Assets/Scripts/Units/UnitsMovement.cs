@@ -25,7 +25,6 @@ public class UnitsMovement : NetworkBehaviour
 
     #region Client
 
-
     public override void OnStartAuthority()
     {
         mainCamera = Camera.main;
@@ -38,7 +37,7 @@ public class UnitsMovement : NetworkBehaviour
         if (!hasAuthority) { return; }
         if (!Mouse.current.rightButton.wasPressedThisFrame) { return; }
 
-        Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+        Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue() );
 
         if(!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity)) { return; }
 
